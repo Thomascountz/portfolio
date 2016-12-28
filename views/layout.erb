@@ -3,13 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <title>Thomas Countz</title>
-    <link href="/css/vendor/bootstrap.css" rel="stylesheet">
-    <link href="/css/vendor/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Thomas Countz</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Bio</a></li>
+          <li><a href="/readme">Readmes</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
     <%= erb :header_partial, :layout => false %>
     <%= yield %>
     <%= erb :footer_partial, :layout => false %>

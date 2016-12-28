@@ -1,26 +1,28 @@
 body {
-  margin: auto 1%;
+  margin: auto 1%;;
+}
+
+.jumbotron {
+  text-align: right;
 }
 
 h1, h2 {
   font-weight: bolder;
-  text-align: right;
 }
 
 .content {
-  background-color: #efefef; /*add subtle color to background of elements*/
-  margin-top: 1%; /*gap between elements*/
-  padding: 8% 0; /*create padding to enlarge block space*/
-  text-align: center;
+  background-color: #efefef; 
+  margin-top: 1%; 
+  padding: 8% 1%;
+  font-size: 1.5em
 }
 
 #bio {
-  font-size: 1.5em; /*enlarge text*/
-  text-align: right; /*center align text*/
+  text-align: right; 
 }
 
 #projects {
-  font-size: 1.5em;
+  text-align: center;
 }
 
 #contact a {
