@@ -2,10 +2,9 @@ body {
   margin: auto 1%;
 }
 
-.jumbotron {
-  background: contain;
-  background-image: url('../images/File_000_1.jpg');  /*import background image of coffee*/
-  background-size: cover;
+h1, h2 {
+  font-weight: bolder;
+  text-align: right;
 }
 
 #about, #projects, #contact {
@@ -17,12 +16,7 @@ body {
 
 #bio {
   font-size: 1.5em; /*enlarge text*/
-  text-align: center; /*center align text*/
-}
-
-.short-img {
-  margin: auto;
-  height: 400px;
+  text-align: right; /*center align text*/
 }
 
 #contact a {
