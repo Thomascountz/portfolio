@@ -1,3 +1,8 @@
+body {
+  margin: auto 1%;
+  text-align: center;
+}
+
 .jumbotron {
   background: contain;
   background-image: url('../images/File_000_1.jpg');  /*import background image of coffee*/
