@@ -19,6 +19,10 @@ h1, h2 {
   text-align: right; /*center align text*/
 }
 
+#projects {
+  font-size: 1.5em;
+}
+
 #contact a {
   font-size: 2em;
 }
