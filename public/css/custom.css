@@ -20,3 +20,11 @@ body {
   text-align: center; /*center align text*/
 }
 
+.short-img {
+  margin: auto;
+  height: 400px;
+}
+
+#contact a {
+  font-size: 2em;
+}
