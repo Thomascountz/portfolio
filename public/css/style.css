@@ -7,7 +7,7 @@ h1, h2 {
   text-align: right;
 }
 
-#about, #projects, #contact {
+.content {
   background-color: #efefef; /*add subtle color to background of elements*/
   margin-top: 1%; /*gap between elements*/
   padding: 8% 0; /*create padding to enlarge block space*/
