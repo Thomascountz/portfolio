@@ -1,0 +1,17 @@
+.jumbotron {
+  background: contain;
+  background-image: url('../images/File_000_1.jpg');  /*import background image of coffee*/
+  background-size: cover;
+}
+
+#about, #projects {
+  background-color: #efefef; /*add subtle color to background of elements*/
+  margin-top: 1%; /*gap between elements*/
+  padding: 12% 0; /*create padding to enlarge block space*/
+}
+
+p {
+  font-size: 1.1em; /*enlarge text*/
+  margin: auto 25%; /*sqeeze in to middle and center vertically*/
+  text-align: center; /*center align text*/
+}
