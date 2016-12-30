@@ -4,29 +4,29 @@
 
   <h2>What is this?</h2>
   
-  <p>It is simple Sinatra app that I built while while following the curriculum at The Odin Project.</p>
+  <p>It is simple ruby script and Sinatra app that I've built while while following the curriculum at <a href="http://www.theodinproject.com" target="none">The Odin Project</a>.</p>
   
   <h2>What does it do?</h2>
   
-  <p>A Casar Cipher, or a shift cipher, is a text encryption method that takes some text and replaces each character with a character that is a given distance up or down the alphabet. <code>a</code> becomes <code>b</code>, <code>z</code> becomes <code>a</code>, and <code>Hello, my name is Thomas, thanks for coming!</code> becomes <code>Ifmmp, nz obnf jt Uipnbt, uibolt gps dpnjoh!</code> Thank goodness for this app, because otherwise that last one would have taken some time.</p>
+  <p>A Casar Cipher, or a shift cipher, is a text encryption method that takes some text and replaces each character with a character that is a given distance up or down the alphabet. For example, <code>a</code> becomes <code>b</code>, <code>z</code> becomes <code>a</code>, and <code>Hello, my name is Thomas, thanks for coming!</code> becomes <code>Ifmmp, nz obnf jt Uipnbt, uibolt gps dpnjoh!</code> Thank goodness for this app, because otherwise that last one would have been pretty hard!</p>
   
   <h2>Abstraction. (...or whatever it's called.)</h2>
   
-  <p>The app view contains an html <code>form</code> containg a textarea and dropdown options. The app accepts user input by way of a <code>params hash</code> sent via a <code>GET</code> request to <code>'/'</code> We just gotta store <code>params[:input]</code> and <code>params[:shift_factor]</code> into some variables, and then we can pass them along to the <code>caesar_cipher.rb</code> script that I got to build and write tests for earlier on in the curriculum.<br><br>The previously CLI-only script uses if-else logic to take an input string and a shift integer, check to see if each character is a letter, if it is, it shifts it within the bounds of the 26 letters in our alphabet. The result is rendered in the <code>views/index.erb</code> file, after the <code>GET</code> request has been recieved.</p>
+  <p>The app view contains an html <code>form</code> with two text areas. The app accepts user input by way of a <code>params hash</code> sent via a <code>GET</code> request to <code>'/caeser_cipher'</code>. We just store <code>params[:input]</code> and <code>params[:shift_factor]</code> into some instance variables, and then we can pass them along to the <code>caesar_cipher.rb</code> method that I got to build and write tests for earlier on in the curriculum.<br><br>This method uses if-else logic to check if each character in the input string is a letter, if it is, it shifts it by the given shift-factor within the bounds of the 26 letters in our alphabet. The result is rendered in the same view.
   
   <h2>Where do we go from here?</h2>
   
-  <p>I'd love to utilize the conventional <code>POST</code> request, rather than only <code>GET</code>. I'm sure I've just got to be willing to get in there and work some things out. Also, why does it have to be a drop down menu? I should be able to find a way to accept and validate a integer in a text box as input.<br><br>The if-else logic mostly works in the Ruby script, except I'd love to see the use of negative numbers produce 'unencryption' so that I get these results.</p>
+  <p>I'd love to utilize the conventional <code>POST</code> method for my form, rather than using <code>GET</code>. I'm sure that I've just got to be willing to get in there and work some things out in order to make that happen.<br><br>Also, the if-else logic works when shifting by a positive number, so now I'd love to see the use of negative numbers produce 'unencryption' so that I get these results:</p>
   <pre>
   #./lib/caeser_cipher.rb
   c_cipher("Hello", 5) #=> "Mjppt"
   c_cipher("Mjppt", -5) #=> "Hello"
   </pre>
   
-  <p>However, I'm having trouble skirting around the ASCII characters surrounding the alphabet.<br><br>Lastly, it's been a while since I've used html, css, and javascript, so I gotta get my hands dirty there again too.</p>
+  <p>However, I'm having trouble skirting around the ASCII characters surrounding the alphabet.</p>
   
   <h2>What did I learn?</h2>
   
-  <p>In the Ruby script, I made sure to use an <code>*args</code> hash for passing in parameters, that way some burden is taken off of the caller as the app keeps on growing, and I had fun using <code>CONSTANTS</code> to get rid of the magic numbers I had floating so other developers can help me more easily. Finally, and funnily enough, using the <code>Array#map</code> method was a revelation for me, saving me a few lines of extra code and giving me a more conscise method.<br><br>In the testing, I saved myself from having to constantly write manual tests in the commandline. Even after falling in love with the <code>pry</code> gem and using <code>bindings</code> nothing beats the pleasure of TDD. Hell, I'm still enjoying going back and refactoring, knowing the code is safe.<br><br>Finally, Sinatra has already tightened up some of my understanding of web development. Have just briefly touched on Rails before, it was all magic, now it's magic and a little bit of technique.</p>
+  <p>In the Ruby script, I made sure to use an <code>*args</code> hash for passing in parameters, that way some burden is taken off of the caller as the app keeps on growing. Likewise, I had fun using <code>CONSTANTS</code> to get rid of the magic numbers I had floating so other developers can help me more easily. Finally, and funnily enough, using the <code>Array#map</code> method was a revelation for me, saving me a few lines of extra code and giving me a more conscise method.<br><br>Using tests, I saved myself from having to constantly write manual examples in the command line. Even after falling in love with the <code>pry</code> gem and using <code>bindings</code> everywhere, nothing beats the pleasure of TDD. Hell, I'm still enjoying going back and refactoring, knowing the code is safe.<br><br>Finally, Sinatra has already tightened up some of my understanding of web development. Have just briefly touched on Rails before, it all seemed like magic, now it's magic and a little bit of technique.</p>
 
 </div>
