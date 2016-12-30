@@ -28,7 +28,7 @@
         └── spec_helper.rb
   </pre>
   
-  <p>As you can probably tell, my focus from early on was with the separation of concerns. Each class was contained with it's own file, and each class had it's own test. Speaking of tests, this project was my first experience using doubles like <code>player1 = double('player')</code> to ensure that one class' tests aren't dependent on a seperate class.<br><br>The other very fun part of building this game was writing the <code>Board#win?</code> method. I approached this problem a few different ways. The first thing to note is that I used a nested array to represent my board:</p>
+  <p>As you can probably tell, my focus from early on was with the separation of concerns. Each class was contained with it's own file, and each class had it's own test. Speaking of tests, this project was my first experience using doubles like <code>player1 = double('player')</code> to ensure that one class' tests aren't dependent on a separate class.<br><br>The other very fun part of building this game was writing the <code>Board#win?</code> method. I approached this problem a few different ways. The first thing to note is that I used a nested array to represent my board:</p>
   
   <pre>
   [['.', '.', '.', '.', '.', '.', '.'],
@@ -39,7 +39,7 @@
    ['O', '.', '.', '.', '.', '.', '.']]
   </pre>
   
-  <p>So therefore, the position where the <code>'O'</code> is located could be indexed as <code>Board[5][0]</code> (The first element in the fifth array). When it came time to write a <code>Board#win</code> method, I first approched it recursively. I wanted the method to return true or false by following a "flood-fill" methodology. The idea was that when a token was played, those "coodinates" would be passed to <code>Board#win?</code>. The base cases would be to <code>return if count == 4</code>, meaning that four tokens were found in sequence, and to <code>return if !row.between?(0, 5) && !column.between?(0, 6)</code>, meaning that the method was now testing outside of the board's range.<br><br>If the current position on the board was equal to the token, the method would check each position in each direction to see if there was a matching token, if so, it would move in that direction and <code>count += 1</code> until either <code>count == 4</code> or a matching token was not found. In theory, this would work, and I'm still excited by the prospect of implementing this algorithm, as I think it is suitable, but instead, I settled on a non-recursive stradegy:</p>
+  <p>So therefore, the position where the <code>'O'</code> is located could be indexed as <code>Board[5][0]</code> (The first element in the fifth array). When it came time to write a <code>Board#win</code> method, I first approached it recursively. I wanted the method to return true or false by following a "flood-fill" methodology. The idea was that when a token was played, those "coordinates" would be passed to <code>Board#win?</code>. The base cases would be to <code>return if count == 4</code>, meaning that four tokens were found in sequence, and to <code>return if !row.between?(0, 5) && !column.between?(0, 6)</code>, meaning that the method was now testing outside of the board's range.<br><br>If the current position on the board was equal to the token, the method would check each position in each direction to see if there was a matching token, if so, it would move in that direction and <code>count += 1</code> until either <code>count == 4</code> or a matching token was not found. In theory, this would work, and I'm still excited by the prospect of implementing this algorithm, as I think it is suitable, but instead, I settled on a non-recursive strategy:</p>
   
   <pre>
   def horizontal_win?(args = {})
@@ -59,7 +59,7 @@
   end
   </pre>
   
-  <p>This method was written to check for horizontal wins and similar methods were written to check for diagonal and vertical wins as well. Firstly, this code accepts an <code>args</code> array to take the pressue of the method caller to keep track of so many representational numbers. Secondly, the code iterates four times and simply adds one to <count>count</count> if token in either direction matches the token that was just played.<br><br>I had some wierd edge case errors with the code initially, for example, when <code>column - i</code> would equal a negative number, the method would then be checking the end of the array, and if their happened to be a matching token on the opposite side, a win would be returned. Luckily testing helped with this!</p>
+  <p>This method was written to check for horizontal wins and similar methods were written to check for diagonal and vertical wins as well. Firstly, this code accepts an <code>args</code> array to take the pressure of the method caller to keep track of so many representational numbers. Secondly, the code iterates four times and simply adds one to <count>count</count> if token in either direction matches the token that was just played.<br><br>I had some weird edge case errors with the code initially, for example, when <code>column - i</code> would equal a negative number, the method would then be checking the end of the array, and if their happened to be a matching token on the opposite side, a win would be returned. Luckily testing helped with this!</p>
   
   <pre>
     it 'returns false' do
