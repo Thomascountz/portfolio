@@ -3,14 +3,21 @@
     <h1>Caesar's Cipher</h1>
     
     <form id="encryption-form">
-      <input type= 'text' name='shift_value' size = "5" />
-      <input type='submit' value='Encrypt!' />
-    </form> 
-    <div class="form-group">
-      <textarea class="form-control" name="input_string" form="encryption-form"rows="4" cols="50"><%= string %></textarea>
-    </div>
-    <div class="form-group">
-      <textarea class="form-control" rows="4" cols="50"><%= message %></textarea>
-    </div>
+    
+      <div class="form-group col-md-5">
+        <textarea class="form-control" name="input_string" rows="5"><%= string %></textarea>
+      </div>
+      
+      
+      <div class="form-group col-md-1">
+        <input class= "form-control" name="shift_value" placeholder="Key"></input><br>
+        <button type='submit' class="btn">Encrypt!</button>
+      </div>
+      
+      <div class="form-group col-md-5">
+        <textarea class="form-control" rows="5"><%= message %></textarea>
+      </div>
+    
+    </form>
   </div>
 </div>
